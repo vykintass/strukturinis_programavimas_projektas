@@ -1,4 +1,13 @@
+// ============================================================
+// NBA Žaidėjų Statistikos Sistema
+// Autorius: [Studento vardas]
+// Aprašymas: Konsolinė programa NBA komandų ir žaidėjų
+//            statistikos valdymui. Leidžia atlikti CRUD
+//            operacijas su komandomis ir žaidėjais, filtruoti
+//            bei rikiuoti duomenis pagal įvairius kriterijus.
+// ============================================================
 
+// Standartinės bibliotekos
 #include <iostream>   // cin, cout – įvestis ir išvestis
 #include <fstream>    // ifstream, ofstream – failų nuskaitymas ir įrašymas
 #include <vector>     // vector – dinaminiai masyvai
@@ -10,6 +19,8 @@
 
 using namespace std;
 
+// ============================================================
+// STRUKTŪROS
 // Aprašomos duomenų struktūros, kurios saugo programos duomenis
 // ============================================================
 
@@ -59,8 +70,7 @@ void clearScreen() {
 // Naudojama po kiekvienos operacijos, kad vartotojas spėtų perskaityti rezultatą
 void waitEnter() {
     cout << "\nSpauskite Enter testi...";
-    cin.ignore(numeric_limits<streamsize>::max(), '\n'); // Išvalo buferį
-    cin.get(); // Laukia Enter paspaudimo
+    cin.get();
 }
 
 // Tikrina ar komanda su nurodytu pavadinimu jau egzistuoja sąraše
@@ -201,7 +211,7 @@ void loadPlayers() {
         getline(ss, tmp, ';'); p.assists = stod(tmp);
         getline(ss, tmp, ';'); p.blocks = stod(tmp);
         getline(ss, tmp, ';'); p.steals = stod(tmp);
-        getline(ss, tmp, ';'); p.gamesPlayed = stoi(tmp);
+        getline(ss, tmp, ';'); p.gamesPlayed = (int)stod(tmp); // stod toleruoja "76.0" formato skaičius
 
         // Pašaliname tarpus iš tekstinių laukų
         p.firstName = trim(p.firstName);
