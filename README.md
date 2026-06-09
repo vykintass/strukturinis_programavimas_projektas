@@ -134,4 +134,4 @@ Visi duomenys saugomi tekstiniuose failuose ir automatiškai išsaugomi atlikus 
 
 ## Autorius
 
-[Vardas Pavardė]
+Vykintas Daugintis
